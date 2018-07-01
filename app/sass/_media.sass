@@ -29,3 +29,266 @@
 
 // ≤1200px
 +media-breakpoint-up(xl)
+
+
+
+@media only screen and (max-width: 1200px)
+	.header
+		height: 80px	
+
+	.logo
+		height: 95%	
+
+	.plane
+		width: 120px
+		height: auto	
+
+	.main
+		padding-top: 15px	
+
+	.promoTop__subtitle
+		font-size: 30px
+
+	.promoTop__title
+		font-size: 37px
+		line-height: 50px
+		span
+			font-size: 50px
+
+	.crabButton
+		background-size: 400px auto
+		background-position: 47% 100%
+		padding-top: 85px
+		height: 180px
+
+	.buttonOuter
+		transform: scale(0.7)
+	/* Конструирование краба на маленьких экранах начало*/
+	.crab	
+		img	
+			transform: scale(0.7)
+
+	.crab	
+		transform: translateX(-115px)	
+		z-index: 20
+		animation-name: crab-move-s
+
+	.crab__body
+		top: -35px
+
+	.crab__left-eye	
+		top: -17px
+		left: 20px
+
+	.crab__right-eye
+		top: -17px
+		left: 47px
+
+	.crab__arrow-left
+		top: -17px
+		left: 20px
+
+	.crab__arrow-right
+		top: -17px
+		left: 38px
+
+	.crab__shell
+		top: -105px
+		left: -9px
+
+	.crab__foot-left
+		top: -30px
+		left: -32px
+		animation-name: leftFoot-move-s
+
+	.crab__foot-right
+		top: -30px
+		left: 58px
+		animation-name: rightFoot-move-s	
+
+	.crab__hand-left
+		top: -20px
+		left: -12px	
+
+	.crab__hand-right
+		top: -17px
+		left: 30px	
+
+	.paused
+		.crab__hand-right
+			animation-name: handShow-s
+		.crab__foot-right
+			animation-name: rightFoot-fastMove-s
+	/* Конструирование краба на маленьких экранах конец*/
+
+	.tours__title
+		font-size: 37px	
+
+	.tr-block:hover .tr-block__title
+		font-size: 25px
+
+	.tr-block__img
+		width: 160px
+		height: 160px
+		border-width: 8px
+		box-shadow: -5px 5px 0 rgba(0,0,0,.5), inset -5px 5px 0 rgba(0,0,0,.5)
+
+	.tr-block__title
+		margin-top: 5px
+		font-size: 22px	
+
+	.tr-block__date	
+		font-size: 15px	
+
+	.tr-block__subImg
+		width: 100px
+		height: auto
+		top: 29%
+		right: -9%	
+
+	.turtleOuter
+		margin-top: 40px
+		img
+			width: 100px 	
+			height: auto	
+
+	.promoBottom__text
+		font-size: 37px	
+		padding: 10px 0	
+
+@media only screen and (max-width: 768px)	
+	.wrapper
+		background-image: url(../img/bg-mobile.jpg)
+
+	.header
+		height: 50px
+
+	.planeOuter
+		display: none	
+
+	.promoTop__subtitle
+		font-size: 26px
+
+	.promoTop__title
+		font-size: 23px
+		line-height: 31px
+		span
+			font-size: 31px
+
+	.crabButton
+		background-size: 300px auto
+		background-position: 47% 100%
+		padding-top: 50px
+		height: 135px
+
+	.buttonOuter
+		transform: scale(0.5)
+
+	/* Конструирование краба на мобильных экранах начало */
+	.crab	
+		img	
+			transform: scale(0.5)
+
+	.crab	
+		transform: translateX(-95px)	
+		z-index: 20
+		animation-name: crab-move-xs
+
+	.crab__body
+		top: -15px
+
+	.crab__left-eye	
+		top: 3px
+		left: 24px
+
+	.crab__right-eye
+		top: 3px
+		left: 43px
+
+	.crab__arrow-left
+		top: 3px
+		left: 24px
+
+	.crab__arrow-right
+		top: 3px
+		left: 34px
+
+	.crab__shell
+		top: -75px
+		left: -9px
+
+	.crab__foot-left
+		top: -10px
+		left: -21px
+		animation-name: leftFoot-move-xs
+
+	.crab__foot-right
+		top: -10px
+		left: 53px
+		animation-name: rightFoot-move-xs	
+
+	.crab__hand-left
+		top: -3px
+		left: -5px	
+
+	.crab__hand-right
+		top: 3px
+		left: 21px	
+
+	.paused
+		.crab__hand-right
+			animation-name: handShow-xs
+		.crab__foot-right
+			animation-name: rightFoot-fastMove-xs
+	/* Конструирование краба на мобильных экранах конец */
+
+	.tours
+		margin: 10px 35px 0
+		background: none
+		border: 4px solid #fff
+		box-shadow: -2px 2px 0 rgba(0,0,0,.5), inset -2px 2px 0 rgba(0,0,0,.5)
+
+	.tours__title
+		font-size: 25px	
+		margin-bottom: 0
+	
+	.tours__wrapper
+		flex-direction: column
+
+	.tr-block
+		margin-left: 0
+
+	.tr-block__img
+		width: 120px
+		height: 120px	
+		border-width: 4px
+		box-shadow: -2px 2px 0 rgba(0,0,0,.5), inset -2px 2px 0 rgba(0,0,0,.5)
+
+	.tr-block__subImg
+		width: 70px
+		height: auto
+		top: 25%
+		right: 5%	
+
+	.tours__first .tr-block:last-child, .tours__second .tr-block:last-child
+		margin-right: 0
+		margin-left: 0
+
+	.tr-block__title
+		margin-top: 5px
+		font-size: 19px	
+
+	.tr-block:hover .tr-block__title
+		font-size: 21px
+
+	.tr-block__date	
+		margin-top: 5px
+		margin-bottom: 12px
+		font-size: 16px	
+		line-height: 20px
+
+	.promoBottom__text
+		display: none
+
+	.promoBottom__text_s
+		display: block		

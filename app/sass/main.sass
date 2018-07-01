@@ -41,7 +41,7 @@ b, strong
 .wrapper
 	width: 100%
 	min-height: 100vh
-	background: url('../img/bg.jpg') no-repeat center top /cover
+	background: url('../img/bg.jpg') no-repeat center top /cover // Подключение главного фона
 
 .header
 	width: 100%
@@ -50,6 +50,7 @@ b, strong
 	display: flex
 	align-items: center
 
+/* Логотип высотой 100% в контейнере 75% от высоты header */
 .logo
 	height: 75%
 	width: 100%
@@ -106,6 +107,7 @@ b, strong
 	text-transform: uppercase
 	font-size: 57px
 	line-height: 78px
+	margin-bottom: 0
 	span
 		font-size: 78px
 		color: $accent
@@ -126,7 +128,7 @@ b, strong
 .crab	
 	position: absolute
 	transform: translateX(-140px)	
-	animation: crab-move 2s linear infinite alternate
+	animation: crab-move 2s linear infinite alternate // Движение краба влево-вправо по кнопке
 	img
 		position: absolute	
 
@@ -193,23 +195,55 @@ b, strong
 	.crab__foot-right
 		animation: rightFoot-fastMove 2s linear infinite
 
-@keyframes crab-move
+@keyframes crab-move // Перемещение краба
 	100%
 		transform: translateX(65px)
 
-@keyframes leftFoot-move
+@keyframes crab-move-s // Перемещение краба на экранах разрешением от 768px до 1200px
+	100%
+		transform: translateX(40px)
+
+@keyframes crab-move-xs // Перемещение краба на мобильных экранах
+	100%
+		transform: translateX(15px)
+
+@keyframes leftFoot-move // Движение левой ноги
 	0%
 		transform: rotate(24deg)
 	100%
 		transform: rotate(0deg)	
+		
+@keyframes leftFoot-move-s // Движение левой ноги на экранах разрешением от 768px до 1200px
+	0%
+		transform: scale(0.7) rotate(24deg)
+	100%
+		transform: scale(0.7) rotate(0deg)	
 
-@keyframes rightFoot-move
+@keyframes leftFoot-move-xs // Движение левой ноги на мобильных экранах
+	0%
+		transform: scale(0.5) rotate(24deg)
+	100%
+		transform: scale(0.5) rotate(0deg)	
+
+@keyframes rightFoot-move // Движение правой ноги
 	0%
 		transform: rotate(0deg)
 	100%
 		transform: rotate(-24deg)	
 
-@keyframes rightFoot-fastMove
+@keyframes rightFoot-move-s // Движение правой ноги на экранах разрешением от 768px до 1200px
+	0%
+		transform: scale(0.7) rotate(0deg)
+	100%
+		transform: scale(0.7) rotate(-24deg)	
+
+@keyframes rightFoot-move-xs // Движение правой ноги на мобильных экранах
+	0%
+		transform: scale(0.5) rotate(0deg)
+	100%
+		transform: scale(0.5) rotate(-24deg)	
+
+@keyframes rightFoot-fastMove // Движение правой ноги при наведение на кнопку
 	0%
 		transform: rotate(-20deg)
 	10%
@@ -223,11 +257,51 @@ b, strong
 	100%	
 		transform: rotate(-20deg)
 
-@keyframes handShow
+@keyframes rightFoot-fastMove-s // Движение правой ноги при наведение на кнопку на экранах разрешением от 768px до 1200px
+	0%
+		transform: scale(0.7) rotate(-20deg)
+	10%
+		transform: scale(0.7) rotate(10deg)
+	20%
+		transform: scale(0.7) rotate(-20deg)
+	30%
+		transform: scale(0.7) rotate(10deg)
+	95%	
+		transform: scale(0.7) rotate(10deg)
+	100%	
+		transform: scale(0.7) rotate(-20deg)
+
+@keyframes rightFoot-fastMove-xs // Движение правой ноги при наведение на кнопку на мобильных экранах
+	0%
+		transform: scale(0.5) rotate(-20deg)
+	10%
+		transform: scale(0.5) rotate(10deg)
+	20%
+		transform: scale(0.5) rotate(-20deg)
+	30%
+		transform: scale(0.5) rotate(10deg)
+	95%	
+		transform: scale(0.5) rotate(10deg)
+	100%	
+		transform: scale(0.5) rotate(-20deg)
+
+@keyframes handShow // Указание клешнёй при наведении на кнопку
 	50%
 		transform: rotate(-25deg)
 	100%
-		transform: rotate(0deg)	
+		transform: rotate(0deg)
+
+@keyframes handShow-s // Указание клешнёй при наведении на кнопку на экранах разрешением от 768px до 1200px
+	50%
+		transform: scale(0.7) rotate(-25deg)
+	100%
+		transform: scale(0.7) rotate(0deg)	
+
+@keyframes handShow-xs // Указание клешнёй при наведении на кнопку на мобильных экранах
+	50%
+		transform: scale(0.5) rotate(-25deg)
+	100%
+		transform: scale(0.5) rotate(0deg)	
 /* Анимации для краба конец */
 
 /* Стили внешней оболочки кнопки */
@@ -235,14 +309,16 @@ b, strong
 	border: 8px solid #b97d60
 	border-radius: 10px
 	box-shadow: -2px 2px 5px #000, 0 0 12px rgba(213, 236, 20, .3)
+	&:hover
+		border-color:	lighten(#b97d60, 8%)
+		box-shadow: -2px 2px 5px lighten(#000, 8%), 0 0 12px lighten(rgba(213, 236, 20, .3), 8%)
 	&:hover .button
 		background-color: lighten(#ffa358, 8%)
 		border-color: lighten(#cc8246, 8%)
 		border-right-color: lighten(#ffc586, 8%)
 		border-top-color: lighten(#ffdaa4, 8%)
-	&:hover
-		border-color:	lighten(#b97d60, 8%)
-		box-shadow: -2px 2px 5px lighten(#000, 8%), 0 0 12px lighten(rgba(213, 236, 20, .3), 8%)
+	&:hover .button h2 
+		color: rgba(189, 7, 7, 0.7)	
 
 /* Кнопка В ЛЕТО */
 .button
@@ -275,9 +351,6 @@ b, strong
 .tours__wrapper
 	display: flex
 
-.tours__first
-	margin-right: 20px	
-
 .tours__first, .tours__second 
 	display: flex
 
@@ -288,8 +361,7 @@ b, strong
 	align-items: center
 	position: relative
 	transition: transform 0.5s ease
-	&:first-child
-		margin-right: 20px
+	margin-left: 15px
 	&:hover .tr-block__date
 		color: $accent
 	&:hover .tr-block__title	
@@ -298,6 +370,9 @@ b, strong
 		transform: scale(0.9)
 	&_increased	
 		transform: scale(1.1)
+
+.tours__second .tr-block:last-child
+	margin-right: 15px
 
 .tr-block__img
 	border: 10px solid #fff
@@ -329,6 +404,7 @@ b, strong
 	text-align: center
 	margin: 0
 	transition: font-size 0.5s ease
+	white-space: nowrap
 	 
 .tr-block__date				
 	font-size: 23px
@@ -355,4 +431,15 @@ b, strong
 .promoBottom__text
 	padding: 20px 0
 	text-align: center
-	font-size: 57px		
+	font-size: 57px	
+	margin: 0	
+
+.promoBottom__text_s
+	padding: 10px 0
+	text-align: center
+	font-size: 25px	
+	line-height: 32px
+	margin: 0
+	display: none
+
+@import "media"	
